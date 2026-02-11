@@ -15,6 +15,10 @@ def homepage():
 def favicon():
     return send_from_directory('.', 'favicon.ico')
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
+
 @app.route('/<path:path>')
 def catch_all(path):
     print(f"Catching all for path: {path}")
